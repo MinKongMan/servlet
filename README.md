@@ -24,3 +24,9 @@
 - ex) ~~/request-param?username=hello&age=20
 3. 서버에서는 HttpServletRequest가 제공하는 메서드를 통해 쿼리 파라미터를 편리하게 조회할 수 있다.
 4. 복수 파라미터로 값이 넘어올 때 getParameterValues()로 받아줘야함.
+
+
+# HTTP 요청 데이터 - POST HTML Form
+1. 메시지 바디에 쿼리 파라미터 형식으로 데이터를 전달한다.(키, 밸류값)
+2. GET 방식은 메시지 바디가 없기 때문에 content-type이 존재하지 않는다.
+3. POST 방식은 메시지 바디를 사용하기 때문에 바디에 포함된 데이터가 어떤 형식인지 content-type을 지정해야 한다.
