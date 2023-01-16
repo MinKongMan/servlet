@@ -17,7 +17,7 @@
 - POST, PUT, PATCH
 
 
-# HTTP 요청 데이터 - GET 파라미터
+### HTTP 요청 데이터 - GET 파라미터
 1. 메시지 바디 없이 URL의 '쿼리 파라미터'를 사용해서 데이터를 전달하자.
 - ex) 검색, 필터, 페이징 등에서 많이 사용됨
 2. 쿼리 파라미터는 URL에 ?를 시작으로 보낼 수 있다. 추가 파라미터는 &로 구분해야 한다.
@@ -26,7 +26,16 @@
 4. 복수 파라미터로 값이 넘어올 때 getParameterValues()로 받아줘야함.
 
 
-# HTTP 요청 데이터 - POST HTML Form
+### HTTP 요청 데이터 - POST HTML Form
 1. 메시지 바디에 쿼리 파라미터 형식으로 데이터를 전달한다.(키, 밸류값)
 2. GET 방식은 메시지 바디가 없기 때문에 content-type이 존재하지 않는다.
 3. POST 방식은 메시지 바디를 사용하기 때문에 바디에 포함된 데이터가 어떤 형식인지 content-type을 지정해야 한다.
+
+# HttpServletResponse - 기본 사용법
+### HttpServletResponse 역할
+1. Http 응답 메시지 생성
+- Http 응답 코드 지정
+- 헤더 생성
+- 바디 생성
+2. 편의 기능 제공
+- ContentType, 쿠키, Redirect
