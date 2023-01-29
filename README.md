@@ -31,6 +31,15 @@
 2. GET 방식은 메시지 바디가 없기 때문에 content-type이 존재하지 않는다.
 3. POST 방식은 메시지 바디를 사용하기 때문에 바디에 포함된 데이터가 어떤 형식인지 content-type을 지정해야 한다.
 
+# 회원 관리 앱 요구사항
+- 회원 정보
+> > 이름 : username<br/>
+> > 나이 : age<br/>
+- 기능 요구사항
+1. 회원 저장
+2. 회원 목록 조회
+
+
 # HttpServletResponse - 기본 사용법
 ### HttpServletResponse 역할
 1. Http 응답 메시지 생성
@@ -41,11 +50,18 @@
 - ContentType, 쿠키, Redirect
 
 
+# JSP - 기본 사용법
+```
+    라이브러리 추가
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl' 
+    
+    페이지 가장 위에 작성
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+```
 
-# 회원 관리 앱 요구사항
-- 회원 정보
-> > 이름 : username<br/>
-> > 나이 : age<br/>
-- 기능 요구사항
-1. 회원 저장
-2. 회원 목록 조회
+### HttpServlet과 JSP의 한계
+1. 서블릿으로 개발할 때는 뷰화면을 위한 HTML을 만드는 작업이 자바 코드에 섞여 복잡했음.
+2. 하지만 JSP를 사용하면서 뷰를 생성하는 HTML 작업을 깔끔하게 가져가고, 중간중간 동적으로 필요한 부분에만 자바 코드 삽입
+3. 하지만 결국 JSP도 뷰와 비즈니스 로직을 한 페이지에 작성하여 결과적으로 유지보수를 하기 힘들어짐
+4. 위의 이유로 MVC 패턴 등장
