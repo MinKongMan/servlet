@@ -20,6 +20,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // JSP를 활용하기 위해 추가
+    implementation 'javax.servlet:jstl' // JSP를 화용하기 위해 추가
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
