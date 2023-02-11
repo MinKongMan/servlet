@@ -19,7 +19,7 @@ public class MemberListControllerV1 implements ControllerV1 {
     public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Member> list = memberRepository.findAll();
 
-        request.setAttribute("list",list);
+        request.setAttribute("members",list);
 
         String path = "/WEB-INF/views/members.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(path);
