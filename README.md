@@ -81,6 +81,6 @@
 2. 매핑 정보를 바탕으로 컨트롤러 호출
 3. 컨트롤러에서 JSP forward를 통해 JSP를 호출하여 HTML응답을 내려줌
 
-### v2 
+### v2 My View 객체 생성
 1. 컨트롤러에서 바로 JSP 를 forward하지 않고 Controller에서 Front Controller에 My View 객체를 반환을 함
 2. Front Controller가 My View를 렌더링 하면 My View가 JSP를 forward하도록 설정
