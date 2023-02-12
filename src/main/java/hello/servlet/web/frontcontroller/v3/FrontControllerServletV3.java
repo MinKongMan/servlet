@@ -51,6 +51,7 @@ public class FrontControllerServletV3 extends HttpServlet {
     }
 
     private Map<String, String> createParamMap(HttpServletRequest req) {
+        // 메서드화 단축키 ctrl alt M
         Map<String,String> paramMap = new HashMap<>();
         req.getParameterNames().asIterator()
                 .forEachRemaining(paramName -> paramMap.put(paramName, req.getParameter(paramName)));
