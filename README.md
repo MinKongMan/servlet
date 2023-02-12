@@ -84,3 +84,10 @@
 ### v2 My View 객체 생성
 1. 컨트롤러에서 바로 JSP 를 forward하지 않고 Controller에서 Front Controller에 My View 객체를 반환을 함
 2. Front Controller가 My View를 렌더링 하면 My View가 JSP를 forward하도록 설정
+
+### v3 모델 추가
+1. 서블릿 종속성 제거
+- 컨트롤러 입장에서 HttpServletRequest, HttpServletResponse가 굳이 필요하지 않아서 Map으로 넘겨줄 예정
+2. 뷰 이름 중복 제거
+- 실제 물리적인 주소정보를 넣지 않고 논리적인 주소 정보만 넣을 예정(그 외에 중복은 처리할 예정)
+- 후에 뷰의 위치가 통채로 변경되어도 프론트 컨트롤러에서만 변경해주면 된다.
