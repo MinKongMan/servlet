@@ -1,7 +1,7 @@
 package hello.servlet.web.frontcontroller.v5.Adapter;
 
 import hello.servlet.web.frontcontroller.ModelView;
-import hello.servlet.web.frontcontroller.v3.ControllerV3;
+import hello.servlet.web.frontcontroller.v4.ControllerV4;
 import hello.servlet.web.frontcontroller.v5.MyHandlerAdapter;
 
 import javax.servlet.ServletException;
@@ -11,22 +11,29 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-// Shift F6 으로 이름 수정 가능
-public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
+public class ControllerV4HandlerAdapter implements MyHandlerAdapter {
+
+
     @Override
     public boolean supports(Object handler) {
-        return (handler instanceof ControllerV3); // ControllerV3 인터페이스로 구현한게 넘어오게 되면 True 반환
+        return (handler instanceof ControllerV4);
     }
 
     @Override
-    public ModelView handle(HttpServletRequest request, HttpServletResponse httpServletResponse, Object handler)
-            throws IOException, ServletException {
-        ControllerV3 controller = (ControllerV3) handler; // supports에서 V3가 아닌 것을 걸렀기 때문에 사용 가능
-
+    public ModelView handle(HttpServletRequest request, HttpServletResponse httpServletResponse, Object handler) throws IOException, ServletException {
+        ControllerV4 handler1 = (ControllerV4) handler;
         Map<String, String> paramMap = createParamMap(request);
-        ModelView modelview = controller.process(paramMap);
-        return modelview;
+
+        HashMap<String, Object> objectObjectHashMap = new HashMap<>();
+        String viewName = handler1.process(paramMap, objectObjectHashMap);
+
+        ModelView modelView = new ModelView(viewName);
+        modelView.setModel(objectObjectHashMap);
+
+        return modelView;
     }
+
+
     private Map<String, String> createParamMap(HttpServletRequest request){
         Map<String, String> map = new HashMap<>();
         request.getParameterNames().asIterator()
