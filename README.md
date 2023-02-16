@@ -110,3 +110,8 @@
 - 1순위 : RequestMappingHandlerAdapter -> 어노테이션 기반의 컨트롤러인 @RequestMapping 에서 사용
 - 2순위 : HttpRequestHandlerAdapter -> HttpRequestHandler 처리
 - 3순위 : SimplerControllerHandlerAdapter -> Controller 인터페이스(어노티에션 X) 처리
+
+3. 뷰 리졸버 - InternalResourceViewResolver
+- 스프링 부트는 InternalResourceViewResolver 라는 뷰 리졸버를 자동으로 등록하는데, 이때 'application-properties'에 등록한 'spring.mvc.view.prefix'와 'spring.mvc.view.suffix' 설정 정보를 사용해서 등록한다.
+- 1순위 : BeanNameViewResolver -> 빈 이름으로 뷰를 찾아서 반환한다.
+- 2순위 : InternalResourceViewResolver -> JSP를 처리할 수 있는 뷰를 반환한다.
