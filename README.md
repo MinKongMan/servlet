@@ -115,3 +115,14 @@
 - 스프링 부트는 InternalResourceViewResolver 라는 뷰 리졸버를 자동으로 등록하는데, 이때 'application-properties'에 등록한 'spring.mvc.view.prefix'와 'spring.mvc.view.suffix' 설정 정보를 사용해서 등록한다.
 - 1순위 : BeanNameViewResolver -> 빈 이름으로 뷰를 찾아서 반환한다.
 - 2순위 : InternalResourceViewResolver -> JSP를 처리할 수 있는 뷰를 반환한다.
+
+```
+@Controller : 스프링이 자동으로 스프링 빈으로 등록한다. (내부에 @Component가 있으면 컴포넌트 스캔 대상이 됨)
+스프링 MVC에서 어노테이션 기반 컨트롤러로 인식한다.
+
+@RequestMapping : 요청 정보를 매핑한다. 해당 URL이 호출되면 이 메서드가 호출된다.
+
+RequestMappingHandlerMapping은 스프링 빈 중에서 @RequestMapping 또는 @Controller가 클래스 레벨에 붙어 있어야 매핑 정보로 인식한다.
+따라서 단순히 @Component만 쓰면 스프링 빈에 등록되고 컴포넌트 스캔의 대상이 되지만 매핑 정보를 인식하지는 못한다.
+```
+
