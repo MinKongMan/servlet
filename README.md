@@ -99,3 +99,14 @@
 ### v5 유연한 컨트롤러
 1. 개발자에 따라 개발 방식이 달라 유연하게 대처할 필요가 있음.
 - 어댑터 패턴을 활용한 개발 (프론트 컨트롤러가 다양한 방식의 컨트롤러를 처리할 수 있도록 변경)
+
+
+# Spring MVC 구조
+1. 핸들러 매핑
+- 1순위 : 어노테이션 기반의 컨트롤러인 RequestMapping에서 사용
+- 2순위 : BeanNameUrlMapping -> 스프링 빈의 이름으로 핸들러를 찾음.
+
+2. 핸들러 어댑터
+- 1순위 : RequestMappingHandlerAdapter -> 어노테이션 기반의 컨트롤러인 @RequestMapping 에서 사용
+- 2순위 : HttpRequestHandlerAdapter -> HttpRequestHandler 처리
+- 3순위 : SimplerControllerHandlerAdapter -> Controller 인터페이스(어노티에션 X) 처리
